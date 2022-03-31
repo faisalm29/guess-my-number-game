@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.4",
+    "browser-sync": "^2.27.9",
+    "cssnano": "^5.1.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.49.9"
+  },
+  "name": "guess-my-number-game",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faisalm29/guess-my-number-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faisalm29/guess-my-number-game/issues"
+  },
+  "homepage": "https://github.com/faisalm29/guess-my-number-game#readme",
+  "description": ""
+}

@@ -1,0 +1,317 @@
+:root {
+  /* fonts */
+  --fontPixel: "Press Start 2P", cursive;
+  --fontMono: "IBM Plex Mono", monospace;
+
+  /* Color */
+  /* Primary */
+  --black: rgb(33, 33, 33);
+  --white: hsl(0, 0%, 93%);
+
+  /* muted for hover state */
+  --mutedWhite: hsl(0, 0%, 80%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fontMono);
+  font-size: 16px;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* helper class */
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu .btn-restart {
+  border: 0;
+  padding: 16px 8px;
+  font-family: var(--fontPixel);
+  background-color: var(--white);
+  margin-right: 16px;
+}
+
+.menu .btn-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px;
+  border: none;
+}
+
+/* main */
+.main-container {
+}
+
+.main-container .hero {
+  text-align: center;
+  margin-bottom: 64px;
+  padding: 0 16px;
+}
+
+.main-container .hero .game-title {
+  font-family: var(--fontPixel);
+}
+
+.main-container .mystery-number-container {
+  position: relative;
+}
+
+.main-container .mystery-number-container .horizontal-line {
+  border: 3px solid var(--white);
+}
+
+.main-container .mystery-number-container .mystery-number {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  padding: 11px;
+  font-size: 42px;
+  font-family: var(--fontPixel);
+  color: var(--black);
+  background-color: var(--white);
+  transform: translate(-50%, 0);
+}
+
+.main-container .main-grid-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "message"
+    "input"
+    "score";
+  margin-top: 64px;
+}
+
+.main-container .main-grid-container .input-container {
+  grid-area: input;
+  margin: 16px 0;
+}
+.main-container .main-grid-container .message {
+  grid-area: message;
+}
+.main-container .main-grid-container .score-text {
+  grid-area: score;
+  margin-top: 16px;
+}
+
+.main-container .main-grid-container .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+}
+
+.main-container .main-grid-container .input-container #answer {
+  width: 150px;
+  font-size: 32px;
+  font-family: var(--fontPixel);
+  text-align: center;
+  padding: 16px 8px;
+  border: none;
+  background-color: var(--white);
+}
+
+.main-container .main-grid-container .input-container .btn-check {
+  display: block;
+  font-family: var(--fontPixel);
+  text-align: center;
+  padding: 16px 8px;
+  border: none;
+  background-color: var(--white);
+}
+
+/* modal */
+.modal-setting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 300px;
+  background-color: var(--white);
+  padding: 24px;
+}
+
+.modal-setting .btn-close-setting-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.modal-setting .btn-close-setting-container .btn-close-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px;
+  border: none;
+  font-size: 18px;
+  font-family: var(--fontPixel);
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.modal-setting > p {
+  color: var(--black);
+}
+
+.modal-setting .difficulty-options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+  margin-top: 16px;
+}
+
+.modal-setting .difficulty-options-container .difficulty-option-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+  position: relative;
+}
+
+.modal-setting
+  .difficulty-options-container
+  .difficulty-option-container
+  .btn-difficulty {
+  border: 0;
+  width: 100px;
+  padding: 16px 0;
+  font-family: var(--fontPixel);
+  color: var(--white);
+  background-color: var(--black);
+  margin-right: 0;
+  text-align: center;
+}
+
+.modal-setting
+  .difficulty-options-container
+  .difficulty-option-container
+  .btn-difficulty-tooltip {
+  border: 0;
+  padding: 16px;
+  font-family: var(--fontPixel);
+  color: var(--white);
+  background-color: var(--black);
+  text-align: center;
+}
+
+.modal-setting
+  .difficulty-options-container
+  .difficulty-option-container
+  .tooltip {
+  /* display: none; */
+  position: absolute;
+  top: -87px;
+  left: -47px;
+  color: var(--black);
+  padding: 16px 24px;
+  width: 350px;
+  background-color: var(--white);
+  box-shadow: 0px 13px 25px 2px rgba(33, 33, 33, 0.1);
+}
+
+.modal-setting
+  .difficulty-options-container
+  .difficulty-option-container
+  .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  transform: rotate(45deg);
+  z-index: 1;
+  box-shadow: 0px 13px 25px 2px rgba(33, 33, 33, 0.1);
+}
+
+.tooltip-easy,
+.tooltip-medium,
+.tooltip-hard {
+  display: none;
+}
+
+.btn-difficulty-tooltip-easy:hover + .tooltip-easy {
+  display: block;
+}
+
+.btn-difficulty-tooltip-medium:hover + .tooltip-medium {
+  display: block;
+}
+
+.btn-difficulty-tooltip-hard:hover + .tooltip-hard {
+  display: block;
+}
+
+/* media queries */
+@media only screen and (min-width: 768px) {
+  .header-container {
+    padding: 32px;
+  }
+  /* .main-container .hero {
+  } */
+  .main-container .main-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "message input"
+      "score input";
+  }
+  .main-container .main-grid-container .input-container {
+    margin: 0;
+  }
+  .main-container .main-grid-container .score-text {
+    margin-top: 0;
+  }
+}

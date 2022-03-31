@@ -4,36 +4,97 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guess My Number!</title>
+    <title>Guess My Number Game</title>
+
+    <!-- Loading Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- Loading icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Loading css -->
+    <link rel="stylesheet" href="dist/style.css" />
   </head>
   <body>
-    <header>
-      <div class="flex">
-        <button class="btn play">Again!</button>
-        <p>&lt;Between 1 and 20&gt;</p>
+    <header class="header-container">
+      <div class="menu">
+        <button class="btn-restart">Restart</button>
+        <button class="btn-setting">
+          <span class="material-icons">settings</span>
+        </button>
       </div>
-      <h1>Guess My Number!</h1>
+      <p>Highscore: <span class="highscore">0</span></p>
     </header>
-    <main>
-      <div class="number">?</div>
-      <div class="grid">
-        <p class="guess">Start guessing...</p>
-        <div class="answer-container">
-          <input id="answer" type="number" min="1" max="20" />
-          <button class="btn check">Check!</button>
+
+    <main class="main-container">
+      <div class="hero">
+        <h1 class="game-title">Guess My Number</h1>
+        <p class="clue">&lt;Between 1 and 20&gt;</p>
+      </div>
+
+      <div class="mystery-number-container">
+        <hr class="horizontal-line" />
+        <p class="mystery-number">?</p>
+      </div>
+
+      <div class="main-grid-container">
+        <p class="message">Start guessing...</p>
+        <div class="input-container">
+          <input type="number" id="answer" min="1" />
+          <button class="btn-check">Check</button>
         </div>
-        <div class="score">
-          <p>💯 Score: <span class="current-score">20</span></p>
-          <p>🥇 Highscore: <span class="highscore">0</span></p>
+        <p class="score">Score: <span class="current-score">100</span></p>
       </div>
     </main>
-    <script src="script.js"></script>
+
+    <!-- Modal -->
+    <div class="modal-setting hidden">
+      <div class="btn-close-setting-container">
+        <button class="btn-close-setting">X</button>
+      </div>
+      <p class="text-center">Select difficulty:</p>
+      <div class="difficulty-options-container">
+        <div class="difficulty-option-container">
+          <button class="btn-difficulty" value="easy">Easy</button>
+          <button class="btn-difficulty-tooltip btn-difficulty-tooltip-easy">
+            ?
+          </button>
+          <div class="tooltip tooltip-easy">
+            <p>Decrease score by 10</p>
+            <p>Mystery number between 1 to 20</p>
+          </div>
+        </div>
+        <div class="difficulty-option-container">
+          <button class="btn-difficulty" value="medium">Medium</button>
+          <button class="btn-difficulty-tooltip btn-difficulty-tooltip-medium">
+            ?
+          </button>
+          <div class="tooltip tooltip-medium">
+            <p>Decrease score by 10</p>
+            <p>Mystery number between 1 to 50</p>
+          </div>
+        </div>
+        <div class="difficulty-option-container">
+          <button class="btn-difficulty" value="hard">Hard</button>
+          <button class="btn-difficulty-tooltip btn-difficulty-tooltip-hard">
+            ?
+          </button>
+          <div class="tooltip tooltip-hard">
+            <p>Decrease score by 20</p>
+            <p>Mystery number between 1 to 100</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dist/script.js"></script>
   </body>
 </html>
